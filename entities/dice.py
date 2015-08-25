@@ -8,25 +8,26 @@ class Die():
     def _roll_command_slicer(roll_command):
         """Processes a roll_command like '3d6' or '1d4+1'.
         
-        It expects either two or three matches:
+        It expects either two or four matches:
         1: the number of times the die should be rolled
         2: the number of sides on the dice
         3. the +/- modifier, which is optional
+        4. the amount of the modifier, which is optional
 
         Returns a tuple.
         """
-        pattern = re.compile('(\d{1,4})d(\d{1,4})(\+\d{1,5})?')
+        pattern = re.compile('(\d{1,4})d(\d{1,4})(\+|\-)(\d{1,5})?')
         matches = re.match(pattern, roll_command).groups()
         matches_length = len(matches)
 
-        if matches_length < 4 and matches_length > 1:
+        if matches_length < 5 and matches_length > 1:
             return matches
 
 
     def _roller(roll_command_tuple):
-        """Takes in a tuple, like ('2', '6', 'None') and rolls the dice.
+        """Takes in a tuple, like ('2', '6', '-', '3') and rolls the dice.
         
-        ('2', '6', 'None') means '2d6' without a +/- roll modifier.
+        ('2', '6', '-', '3') means '2d6' and subtract 3.
         """
         pass
 
