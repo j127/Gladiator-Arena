@@ -2,8 +2,8 @@ import re
 from random import randint
 
 
-class Die():
-    """Represents a die."""
+class DiceRoll():
+    """Represents a roll of one or more dice, optionally with a +/- modifier."""
 
     def _roll_command_slicer(roll_command):
         """Processes a roll_command like '3d6' or '1d4+1'.
