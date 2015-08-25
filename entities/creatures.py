@@ -13,3 +13,10 @@ class Creature(object):
         pass
 
 
+    # Gold coins
+    # Inventory: weapons, armor
+    # Hit points
+    # Armor class
+    # Damage modifiers
+    # Character class
+    # Character species
