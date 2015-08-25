@@ -3,7 +3,7 @@ from random import randint
 
 
 class Die():
-    """Represents a die. Defaults to d6."""
+    """Represents a die."""
 
     def _roll_command_slicer(roll_command):
         """Processes a roll_command like '3d6' or '1d4+1'.
@@ -32,11 +32,12 @@ class Die():
 
 
     def __init__(self, roll_command):
-
+        # TODO: write this.
         self.num_sides = num_sides
 
 
     def __repr__(self):
+        # TODO: rewrite this.
         return 'A {num}-sided die.'.format(num=self.num_sides)
 
 
@@ -46,6 +47,7 @@ class Die():
         which case it returns a two-item list. The first item is the (integer)
         sum of the rolls. The second item is a list of the rolls.
         """
+        # TODO: rewrite all of this.
         rolls = [randint(1, self.num_sides) for roll in range(num_rolls)]
         total = sum(rolls)
         if show_rolls is True:
